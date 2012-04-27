@@ -28,8 +28,8 @@ class Configuration implements ConfigurationInterface
         ->children()
             ->scalarNode('api_key')->end()
             ->scalarNode('shared_secret')->end()
-            ->scalarNode('username')->end()
-            ->scalarNode('password')->end()
+            ->scalarNode('username')->defaultNull()->end()
+            ->scalarNode('password')->defaultNull()->end()
         ->end();
 
         return $treeBuilder;

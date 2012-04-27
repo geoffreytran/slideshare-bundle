@@ -21,11 +21,11 @@ class ZymSlideShareExtension extends Extension
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
-    
-        $container->setParameter('zym_slideshare.api_key', $configs['api_key']);
-        $container->setParameter('zym_slideshare.shared_secret', $configs['shared_secret']);
-        $container->setParameter('zym_slideshare.username', $configs['username']);
-        $container->setParameter('zym_slideshare.password', $configs['password']);
+
+        $container->setParameter('zym_slide_share.api_key', $config['api_key']);
+        $container->setParameter('zym_slide_share.shared_secret', $config['shared_secret']);
+        $container->setParameter('zym_slide_share.username', $config['username']);
+        $container->setParameter('zym_slide_share.password', $config['password']);
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
